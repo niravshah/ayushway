@@ -14,5 +14,8 @@ router.get('/treatments/list', function(req, res, next) {
     res.render('list');
 });
 
+router.get('/treatments/:id', function(req, res, next) {
+    res.render('treatment');
+});
 
 module.exports = router;
