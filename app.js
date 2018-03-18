@@ -1,3 +1,11 @@
+
+require('dotenv').config()
+
+var mongoose = require('mongoose');
+mongoose.Promise = global.Promise;
+mongoose.connect(process.env.MONGO_URL, {useMongoClient: true})
+
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
