@@ -10,6 +10,10 @@ router.get('/home', function(req, res, next) {
     res.render('index');
 });
 
+router.get('/contact', function(req, res, next) {
+    res.render('contact');
+});
+
 router.get('/treatments/list', function(req, res, next) {
     res.render('list');
 });
