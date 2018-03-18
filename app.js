@@ -1,9 +1,16 @@
 
+var env = process.env.NODE_ENV || 'dev';
+var config = require('./config')[env];
+
+console.log("ENV:",env);
 require('dotenv').config()
 
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.MONGO_URL);
+
+var mongo_express = require('mongo-express/lib/middleware');
+app.use('/mongo_express', mongo_express(config.mongo_express_config));
 
 
 var express = require('express');
